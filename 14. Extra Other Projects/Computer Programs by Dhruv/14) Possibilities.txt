@@ -1,0 +1,75 @@
+/** Java Program 
+ * Program Aim :- To Calc. Alphabhets in Max. Common Series 
+ * that can be Obtained by 2 Words.
+ * Author :- Dhruv R Jain
+ * Date :- 19th October, 2016
+ * Time :- 7:30p.m to 8:15pm
+ * Copyright© :- Dhruv Electonics & Software Company.
+ */
+import java.util.*;
+public class DMax
+{
+    private static void Start()
+    {
+        Scanner sc=new Scanner(System.in);
+        do
+        {
+            System.out.println("Hello And Welcome to Dhruv Programing World!");
+            System.out.println("Program Aim :- To Calc. Alphabhets in Max. Common Series ");
+            System.out.println(" that can be Obtained by 2 Words.");
+            System.out.println("\nPress Yes to Start And No to Stop");
+            if((sc.nextLine()).equalsIgnoreCase("No"))
+            {
+                System.out.println("Press any key to Continue!");
+                System.out.println("Good Bye!, Hope to See u Soon and Have Good day Ahead!");
+                break;
+            }
+            System.out.println("Enter yr 1st Word?");
+            String s1=sc.nextLine();
+            System.out.println("Enter yr 2nd Word?");
+            String s2=sc.nextLine();
+            String sm,bg; int ctr=0,k=0,a=0;
+            if(s1.length()<=s2.length())
+            {
+                sm=s1;bg=s2;
+            }
+            else
+            {
+                sm=s2;bg=s1;
+            }
+            char store[] = new char[sm.length()];
+            for(int i=0;i<sm.length();i++)
+            {
+                char ch1=sm.charAt(i);
+                for(int j=0;j<bg.length();j++)
+                {
+                    char ch2=bg.charAt(j);
+                    if(ch1==ch2)
+                    {
+                        if(j>=k)
+                        {
+                            store[ctr]=ch1;
+                            ctr++;k=j;
+                            break;
+                        }                                        
+                    }
+                }
+            }
+            for(int i=0;i<store.length;i++)
+            {
+                if((int)store[i]!=0)            
+                    a++;            
+            }
+            System.out.println("Max Common Series Obtained :- "+(new String(store)));
+            System.out.println("Max Alphabet Obtained :- "+a);
+            System.out.println("Press any key to Continue!");
+            String d=sc.nextLine();
+            System.out.print('\f');
+        }while(true);
+    }
+    public static void main(String args[])
+    {
+        DMax DM=new DMax();
+        DM.Start();
+    }
+}        

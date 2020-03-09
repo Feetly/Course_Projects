@@ -1,0 +1,50 @@
+LED char
+
+.include /home/student/student/Documents/led/blue_5mm.txt
+.include /home/student/student/Documents/led/green_5mm.txt
+.include /home/student/student/Documents/led/red_5mm.txt
+.include /home/student/student/Documents/led/diode.txt
+vin 2 0 dc 5.0V
+
+r1 8 0 1000
+r2 9 0 1000
+r3 10 0 1000
+r4 11 0 1000 
+
+vd1 2 3 0
+vd2 2 4 0
+vd3 2 5 0
+vd4 2 6 0
+
+d1 3 8 RED
+
+d2 4 9 BLUE
+
+d3 5 10 GREEN
+
+d4 6 11 DIO
+
+
+.control
+dc Vin 0.0001 6 0.0001
+run
+set hcopydevtype=postscript
+set hcopypscolor = 0 * gives a white background
+*hcopypscolor = 1 gives a black background
+*hcopypscolor = 2 gives a red   background
+*hcopypscolor = 3 gives a green background
+*hcopypscolor = 4 gives a blue  background
+
+set color0 = rgb:f/f/e  ;background, a nice color of off-white
+set color1 = rgb:1/1/1 ;text and grid almost black
+
+plot i(vd1) vs v(3,8), i(vd2) vs v(4,9),i(vd3) vs v(5,10), i(vd4) vs v(6,11) xlabel 'Vd' ylabel 'Id' title 'V-I Characteristics'
+
+plot ln(i(vd1)) vs v(3,8), ln(i(vd2)) vs v(4,9), ln(i(vd3)) vs v(5,10), ln(i(vd4)) vs v(6,11) xlabel 'Vd' ylabel 'ln Id' title 'ln(Id) Vs Vd' 
+
+*plot  ln(i(vd1)) vs v(3,8) xlabel 'Vd' ylabel 'ln Id' title 'title' yl -40 -25 xl 0 2 // To plot characteristics of single LED with axis limits
+
+*hardcopy plot2.ps i(vd1) vs v(3,8) xlabel 'x_label' ylabel 'ylabel' title 'title'
+.endc
+.END
+

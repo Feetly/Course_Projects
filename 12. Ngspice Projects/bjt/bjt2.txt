@@ -1,0 +1,19 @@
+bjt bias 2
+
+.include /home/student/student/Documents/bjt/QN2222.txt
+vbb 1 0 dc 2v
+r1 1 2 100
+q1 3 2 0 Q2N2222A 
+r2 3 4 100
+v5 5 6 dc 5v
+vd 5 4 dc 0v
+r3 6 0 100
+
+.control
+dc vbb 0 5 0.02 
+run
+
+plot vd#branch vs v(2)
+print vd#branch v(2)
+.endc
+.END

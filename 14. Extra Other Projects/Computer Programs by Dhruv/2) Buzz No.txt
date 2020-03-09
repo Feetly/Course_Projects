@@ -1,0 +1,59 @@
+import java.io.*;
+public class BuzzFactors
+{
+    InputStreamReader isr=new InputStreamReader(System.in);
+    BufferedReader br=new BufferedReader(isr);
+    private boolean isNoBuzz(int no)
+    {
+        return (no%10==7 || no%7==0);
+    }
+    private void factors(int no)
+    {
+        for(int i=1;i<=no;i++)
+        {
+            if(no%i==0)
+            System.out.println(i);
+        }
+    }
+    private void menu()
+    {
+        System.out.println("1. check buzz no");
+        System.out.println("2. display factors");
+        System.out.println("3. exit");
+    }
+    public void process() throws IOException
+    {
+        int ch=0;
+        int no=0;
+        do
+        {
+            menu();
+            ch=Integer.parseInt(br.readLine());
+            switch(ch)//ch can be either byte,short,int or char
+            {
+                case 1:
+                System.out.println("enter the number");
+                no=Integer.parseInt(br.readLine());
+                if(isNoBuzz(no))
+                System.out.println("No is a buzz number");
+                else
+                System.out.println("No is not a buzz number");
+                break;
+                case 2:
+                System.out.println("enter the number");
+                no=Integer.parseInt(br.readLine());
+                factors(no);
+                break;
+                case 3:
+                System.out.println("Goodbye");
+                break;
+                default:
+                System.out.println("Invalid Choice");
+            }
+        }while(ch!=3);
+    }
+    public boolean isLeap(int year)
+    {
+        return ((yy%400==0)||(yy%4==0 && yy%100!=0));
+    }
+}

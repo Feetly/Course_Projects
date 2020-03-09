@@ -1,0 +1,133 @@
+import java.util.*;
+public class Random
+{
+    Scanner sc=new Scanner(System.in);
+    private int fir(int d)
+    {
+        return (Integer.parseInt((Double.toString(Math.random())).substring(2,(2+d))));
+    }
+    private void actual1()
+    {
+        do
+        {   
+            System.out.println("Enter no. of digits yr random no. should have? Or Press 0 to exit)");
+            int dis=sc.nextInt();
+            if(dis==0)
+                break;
+            int no=fir(dis);
+            String checky=Integer.toString(no);
+            int l=checky.length();
+            if(l==dis)
+                System.out.println("Yr random no. of digit("+dis+") is :- "+no);
+            else
+            {
+                int d=dis-l;
+                System.out.print("Yr random no. of digit("+dis+") is :- ");
+                for(int i=1;i<=d;i++)
+                    System.out.print(fir(1));
+                System.out.println(no);    
+            }
+        }while(true);
+        System.out.println("Press enter to continue");
+        String t1=sc.nextLine();
+        t1=sc.nextLine();
+        System.out.print('\f');
+    }
+    private void sec(int fn,int ln)
+    {        
+        int fl=Integer.toString(fn).length();
+        int sl=Integer.toString(ln).length();
+        int t=0,no=0;
+        do
+        {
+            t=fir(1);
+        }while(!(t>=fl&&t<=sl));
+        do
+        {
+            no=fir(t);
+        }while(!(no>=fn&&no<=ln));
+        System.out.println("Yr Random no. between Range("+fn+"-"+ln+") is :- "+no);
+    }
+    private void actual2()
+    {
+        do
+        {
+            System.out.println("Random no.s between a Range!(Eg. 3-100 or 55-367 etc..)");
+            System.out.println("Press \"1\" to start Or \"0\" to exit");
+            if(sc.nextInt()==0)
+                break;
+            System.out.println("Enter the starting range no.? (Eg. 3 or 55 etc..)");
+            int firno=sc.nextInt();
+            System.out.println("Enter the ending range no.? (Eg. 100 or 367 etc..)");
+            int secno=sc.nextInt();
+            sec(firno,secno);            
+        }while(true);
+        System.out.println("Press enter to continue");
+        String t2=sc.nextLine();
+        t2=sc.nextLine();
+        System.out.print('\f');
+    }
+    private void menu()
+    {
+        System.out.println("__________________________________________");
+        System.out.println("Choose an option");
+        System.out.println("1.Get random no. through no. of digits?");
+        System.out.println("                OR                     ");
+        System.out.println("2.Get random no. through range of no.s?");
+        System.out.println("3.Exit");
+        System.out.println("Enter yr Choice(1-3)");
+    }
+    private void start()
+    {
+        try{
+        System.out.println("Welcome again, to our new mindblowing program");
+        System.out.println("Created by :- Dhruv");
+        System.out.println("Name of Program :- \"Get Random\"");
+        System.out.println("/-----------\\");
+        System.out.println("|Dhruv Rocks|");
+        System.out.println("\\-----------/");
+        System.out.println("Press enter to continue!");
+        String t5=sc.nextLine();
+        System.out.print('\f');
+        int chc=0;
+        do
+        {
+            System.out.println("/-----------\\");
+            System.out.println("|Dhruv Rocks|");
+            System.out.println("\\-----------/");
+            menu();
+            chc=sc.nextInt();
+            switch(chc)
+            {
+                case 1 : actual1();
+                         break;
+                case 2 : actual2();
+                         break;
+                case 3 : System.out.println("Good Bye, come back soon!");
+                         System.out.println("Press enter to Exit");
+                         String t3=sc.nextLine();
+                         t3=sc.nextLine();
+                         System.out.print('\f');
+                         sc.close();
+                         System.exit(0);   
+                         break;
+                default : System.out.println("Wrong Choice , try again");
+                          System.out.println("Press enter to continue");
+                          String t4=sc.nextLine();
+                          t4=sc.nextLine();
+                          System.out.print('\f');  
+                          break;
+            }
+        }while(chc!=3);
+    }
+    catch(Exception e)
+    {
+        System.out.println("Invalid");
+    }    
+    }
+    public static void main(String []args)
+    {
+        Random r=new Random();
+        r.start();
+    }
+}

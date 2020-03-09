@@ -1,0 +1,14 @@
+public class findSquareRootWithoutMthsClass
+{
+    public void d(double number)
+    {
+    double g1=0,squareRoot = number/2;
+    do
+    {
+        g1=squareRoot;
+        squareRoot = (g1 + (number/g1))/2;
+    }
+    while((g1-squareRoot)!=0);
+    System.out.println(squareRoot);
+    }
+}

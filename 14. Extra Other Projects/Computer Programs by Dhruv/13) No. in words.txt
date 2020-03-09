@@ -1,0 +1,32 @@
+public class NoInWords
+{
+    String[]a={"zero","one","two","three","four","five","six","seven","eight","nine",
+        "ten","eleven","twelve","thirteen","fourteen","fifteen","sixteen",
+        "seventeen","eighteen","nineteen","twenty","thirty","forty","fifty","sixty",
+        "seventy","eighty","ninety"};
+        private String getEquivalent(int amt)
+        {
+            if(amt<=20)
+            return a[amt];
+            int tens=amt/10;
+            int units=amt%10;
+            if(units!=0)
+            return a[18+tens]+" "+a[units];
+            else
+            return a[18+tens];
+        }
+        public void print(int amt)
+        {
+            if(amt<100)
+            System.out.println(getEquivalent(amt));
+            else
+            {
+                int hundreds=amt/100;
+                amt%=100;
+              if(amt==0)
+                System.out.println(a[hundreds]+" hundred ");
+                else
+                System.out.println(a[hundreds]+" hundred "+getEquivalent(amt));
+            }
+        }
+    }

@@ -1,0 +1,19 @@
+public class Recursive
+{
+    public int getFactorial(int n)
+    {
+        int f=1;
+        for(int i=1;i<=n;i++)
+        {
+            f*=i;
+        }
+        return f;
+    }
+    //recursive method
+    public int getFact(int n)
+    {
+        if(n==1)
+        return 1;
+        return n*getFact(n-1);
+    }
+}

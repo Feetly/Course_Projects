@@ -1,0 +1,226 @@
+import java.util.*;
+public class Binary
+{
+    Scanner sc=new Scanner(System.in);
+    private void menu()
+    {
+        System.out.println("Welcome to yr new program :- Convert");
+        System.out.println("1. To get Ascii values of all characters in a sentence?");
+        System.out.println("2. To get actual sentence through a Ascii filled Sring?");
+        System.out.println("3. To get Binary digits through a Ascii filled String?");
+        System.out.println("4. To get Ascii of all characters of Binary digits String");
+        System.out.println("5. To get Binary form of a Sentence?");
+        System.out.println("6. To get actual Sentence through Binary digits String?");
+        System.out.println("7. Exit. ");
+        System.out.println("*Note:- Before entering the details plz make sure yr words"); 
+        System.out.println("and different values are spearted by a space character in a String .");
+        System.out.println("Enter yr choice (1-7)");
+    }
+    /** Keep Spaces between Words.
+    */
+    private void first(String s)  
+    {
+        System.out.println("Yr Sentence was :- "+s);
+        String f="";
+        for(int i=0;i<s.length();i++)
+        {
+            char ch=s.charAt(i);
+            System.out.println("Ascii code of "+ch+" :- "+(int)ch);
+            f+=(int)ch+" ";
+        }
+        System.out.println("Overall Ascii Code of sentence :- "+f); 
+    }
+    /** Keep Spaces between Ascii codes.
+    */
+    private void sec(String f)
+    {
+        f+=" ";
+        String w="",s=""; 
+        for(int i=0;i<f.length();i++)
+        {
+             char ch=f.charAt(i);
+             if(ch!=' ')
+                w+=ch;
+             else
+             {
+                 int co=Integer.parseInt(w);
+                 char ac=(char)co;
+                 System.out.println("Character for Ascii Code "+co+" is "+ac);
+                 s+=ac;
+                 w="";
+             }
+        }
+        System.out.println("Actual String is :- "+s);
+    }
+    /** Keep Spaces between Ascii codes.
+    */
+   private void thi(String afcs)
+   {
+       System.out.println("Yr String is :- "+afcs);
+       afcs+=" ";
+       String w="",f="";
+       for(int i=0;i<afcs.length();i++)
+       {
+           char ch=afcs.charAt(i);
+           if(ch!=' ')
+            w+=ch;
+           else
+           {
+               int co=Integer.parseInt(w),lo=0,n=co-(int)Math.pow(2,lo);
+               while(n>=0)
+               {
+                   lo+=1;
+                   n=co-(int)Math.pow(2,lo);
+               }
+               int ar[]=new int[lo];
+               do
+               {
+                   int pos=0,no=co-(int)Math.pow(2,pos);
+                   while(no>=0)
+                   {
+                       pos+=1;
+                       no=co-(int)Math.pow(2,pos);
+                   }
+                   int r=co-(int)Math.pow(2,pos-1);
+                   co=r;
+                   ar[lo-pos]=1;
+               }while(co!=0);
+               String b="";
+               for(int j=0;j<ar.length;j++)
+                  b+=ar[j];
+               System.out.println("Binary form of character "+w+" is "+b);
+               f+=b+" ";
+               w="";
+           }
+       }
+       System.out.println("Overall Binary form is :- "+f);
+   }
+   /** Keep Spaces between differnt Binary Codes.
+   */
+  private void fort(String bc)
+  {
+      System.out.println("Yr String is :- "+bc);
+      bc+=" ";
+      String w="",f="";
+      for(int i=0;i<bc.length();i++)
+      {
+          char ch=bc.charAt(i);
+          if(ch!=' ')
+            w+=ch;
+          else
+          {
+              int sum=0,l=w.length(); 
+              for(int j=0;j<l;j++)
+                  sum+=((int)w.charAt(j)-48)*(int)Math.pow(2,l-j-1);
+              System.out.println("Ascii for Binary code "+w+" is "+sum);
+              f+=sum+" ";
+              w="";
+          }
+      }
+      System.out.println("Overall Ascii form :- "+f);
+  }
+  /** Keep Spaces between words.
+  */
+  private void fift(String s)
+  {
+      String f="";
+      System.out.println("Yr String is :- "+s);
+      for(int i=0;i<s.length();i++)
+      {
+          char ch=s.charAt(i);
+          int co=(int)ch,lo=0,n=co-(int)Math.pow(2,lo);
+          while(n>=0)
+          {
+              lo+=1;
+              n=co-(int)Math.pow(2,lo);
+          }
+          int ar[]=new int[lo];
+          do
+          {
+              int pos=0,no=co-(int)Math.pow(2,pos);
+              while(no>=0)
+              {
+                  pos+=1;
+                  no=co-(int)Math.pow(2,pos);
+              }
+              int r=co-(int)Math.pow(2,pos-1);
+              co=r;
+              ar[lo-pos]=1;
+          }while(co!=0);
+          String b="";
+          for(int j=0;j<ar.length;j++)
+              b+=ar[j];
+          System.out.println("Binary form of character "+ch+" is "+b);
+          f+=b+" ";
+      }
+      System.out.println("Overall Binary form is :- "+f);
+  }
+  /** Keep Spaces between differnt Binary Codes.
+  */
+  private void six(String bs)
+  {
+      System.out.println("Yr String is :- "+bs);
+      bs+=" ";
+      String w="",f="";
+      for(int i=0;i<bs.length();i++)
+      {
+          char ch=bs.charAt(i);
+          if(ch!=' ')
+            w+=ch;
+          else
+          {
+              int sum=0,l=w.length(); 
+              for(int j=0;j<l;j++)
+                  sum+=((int)w.charAt(j)-48)*(int)Math.pow(2,l-j-1);
+              System.out.println("Ascii for Binary code "+w+" is "+(char)sum);
+              f+=(char)sum;
+              w="";
+          }
+      }
+      System.out.println("Overall Sentence :- "+f);
+  }
+  private void start()
+  {
+      int chc=0;
+      do
+      {
+          menu();
+          chc=sc.nextInt();
+          String tp=sc.nextLine();
+          switch(chc)
+          {
+              case 1 : System.out.println("Enter yr charaters filled sentence?");
+                       first(sc.nextLine());
+                       break;
+              case 2 : System.out.println("Enter yr ascii values filled sentence?");
+                       sec(sc.nextLine());
+                       break;
+              case 3 : System.out.println("Enter yr ascii filled sentence?");
+                       thi(sc.nextLine());
+                       break;
+              case 4 : System.out.println("Enter yr binary filled sentence?");
+                       fort(sc.nextLine());
+                       break;
+              case 5 : System.out.println("Enter yr Sentence?");
+                       fift(sc.nextLine());
+                       break;
+              case 6 : System.out.println("Enter yr binary filled sentence?");
+                       six(sc.nextLine());
+                       break;
+              case 7 : System.out.println("Good Bye!");
+                       break;
+              default :System.out.println("Invalid Choice , Try Again"); 
+          }
+          System.out.println("Press Enter to Continue");
+          tp=sc.nextLine();
+          System.out.print("\f");
+      }while(chc!=7);
+      sc.close();
+      System.exit(0);
+  } 
+  public static void main(String args[])
+  {
+      Binary c=new Binary();
+      c.start();
+  }
+}

@@ -1,0 +1,155 @@
+import java.util.*;
+public class Spent
+{
+    static Scanner sc=new Scanner(System.in);
+    private static void acc()
+    {
+     do
+     {
+        System.out.println("\fReady to Start (Y OR N)");
+        if(sc.next().equalsIgnoreCase("N"))
+            break;
+        System.out.println("In which year were you born?");
+        double check=sc.nextInt();
+        double y=Calendar.getInstance().get(Calendar.YEAR)-check;
+        System.out.println("In which month were you born?");
+        double m=((Calendar.getInstance().get(Calendar.MONTH))+1)-sc.nextInt();
+        System.out.println("On which date were you born?");
+        double d=Calendar.getInstance().get(Calendar.DATE)-sc.nextInt();
+        System.out.println("At how many hours were you born? (if you dont know press 0)");
+        double h=Calendar.getInstance().get(Calendar.HOUR_OF_DAY)-sc.nextInt();
+        System.out.println("At how many minutes were you born? (if you dont know press 0)");
+        double mi=Calendar.getInstance().get(Calendar.MINUTE)-sc.nextInt();
+        System.out.println("At how many seconds were you born? (if you dont know press 0)");
+        double s=Calendar.getInstance().get(Calendar.SECOND)-sc.nextInt();
+        System.out.println("At how many milli seconds were you born? (if you dont know press 0)");
+        double mis=Calendar.getInstance().get(Calendar.MILLISECOND)-sc.nextInt();
+        if(mis<0)
+        {
+            s-=1;
+            if(s<0)
+            {
+                m-=1;
+                if(mi<0)
+                {
+                    h-=1;
+                    if(h<0)
+                    {
+                        d-=1;
+                        if(d<0)
+                        {
+                            m-=1;
+                            if(m<0)
+                            {
+                                y-=1;
+                                m+=12;
+                            }   
+                            d+=30.436849922895;
+                            }
+                            h+=24;
+                        }
+                        mi+=60;
+                    }
+                    s+=60;
+                }
+            mis+=1000;
+        }
+        if(s<0)
+            {
+                m-=1;
+                if(mi<0)
+                {
+                    h-=1;
+                    if(h<0)
+                    {
+                        d-=1;
+                        if(d<0)
+                        {
+                            m-=1;
+                            if(m<0)
+                            {
+                                y-=1;
+                                m+=12;
+                            }   
+                            d+=30.436849922895;
+                            }
+                            h+=24;
+                        }
+                        mi+=60;
+                    }
+                    s+=60;
+        }
+        if(mi<0)
+        {
+                    h-=1;
+                    if(h<0)
+                    {
+                        d-=1;
+                        if(d<0)
+                        {
+                            m-=1;
+                            if(m<0)
+                            {
+                                y-=1;
+                                m+=12;
+                            }   
+                            d+=30.436849922895;
+                            }
+                            h+=24;
+                        }
+                        mi+=60;
+        }
+        if(h<0)
+        {
+                        d-=1;
+                        if(d<0)
+                        {
+                            m-=1;
+                            if(m<0)
+                            {
+                                y-=1;
+                                m+=12;
+                            }   
+                            d+=30.436849922895;
+                            }
+                            h+=24;
+        } 
+        if(d<0)
+        {
+                            m-=1;
+                            if(m<0)
+                            {
+                                y-=1;
+                                m+=12;
+                            }   
+                            d+=30.436849922895;
+        }
+        if(m<0)
+        {
+                                y-=1;
+                                m+=12;
+        }
+        double z=((y*365.24219907474)+(m*30.436849922895))+d;
+        System.out.println("No. of years you lived :- "+((int)y));
+        System.out.println("No. of months you lived :- "+((int)((y*12)+m)));
+        System.out.println("No. of days you lived :- "+((long)z));
+        System.out.println("No. of hours you lived :- "+((long)((z*24)+h)));
+        System.out.println("No. of minutes you lived :- "+((long)((((z*24)+h)*60)+mi)));
+        System.out.println("No. of seconds you lived :- "+((long)((((((z*24)+h)*60)+mi)*60)+s)));
+        System.out.println("You are :- "+((y+(m/12)))+" Old");
+        System.out.println("Press Enter To Continue");
+        String con=sc.nextLine();
+        con=sc.nextLine(); 
+    }while(true);
+    sc.close();
+    System.exit(0);
+   }
+   private static boolean isLeap(double y)
+    {
+        return (y%400==0)||((y%4==0)&&(y%100!=0)); 
+    }
+   public static void main(String args[])
+   {
+        acc();
+   }
+}

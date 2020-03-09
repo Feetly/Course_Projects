@@ -1,0 +1,9 @@
+1) git clone https://github.com/RoboticsDH/Maze.git
+2) Making Changes, Add folders and stuff. change contribution files nd modification files nd igonore files.
+3) git add .
+4) git commit -m "(Major Changes done in this edit)"
+5)  git config --global user.email "you@example.com" //Github email ID 
+6)  git config --global user.name "Your Name" //Github Name
+7) git pull origin master //To check if anyone has changed file while we were too working on same file.
+8) git push origin master //To Make yr changes official
+Forking and merging techniques ill teach afterwards.

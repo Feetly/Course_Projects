@@ -1,0 +1,21 @@
+I-V Characteristics of CD4007
+
+.include /home/student/student/Documents/nmos/cd4007.txt
+vin 1 0 ac sin(0 0.2 1k 0 0)
+m1 4 2 0 0 MN4007 
+
+c1 1 2 2u
+c2 4 5 0.5u
+r2 2 0 3.214k
+r1 2 3 7.5k
+vdd 3 0 10v
+r3 3 4 4k
+r4 5 0 10k
+
+
+.tran 0.02ms 6ms
+.control
+run
+plot v(1) v(5) 
+.endc
+.end

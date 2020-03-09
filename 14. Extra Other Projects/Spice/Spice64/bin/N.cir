@@ -1,0 +1,22 @@
+NMOS char
+
+.model MN4007 NMOS (Kp=500u Vto=1.5 Lambda=0.01 Gamma=0.6
++ Xj=0 Tox=1200n Phi=.6 Rs=0 Rd=0 Cbd=2.0p Cbs=2.0p Pb=.8 Cgso=0.1p Cgdo=0.1p Is=16.64p N=1)
+
+vgs 1 0 dc 1v
+rg 1 2 100
+
+m1 3 2 6 0 MN4007
+rd 3 4 100
+
+*DC source of 0v to measure current
+vds 6 0 dc 0v
+vdd 5 0 dc 0.050v
+
+*DC analysis to sweep vds from 0 to 5V
+.dc vdd 0 4 1
+.control
+run
+plot i(vds) vs v(3)
+.endc
+.end

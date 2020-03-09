@@ -1,0 +1,18 @@
+I-V Characteristics of CD4007
+*Including the CD4007 model file
+.include /home/student/student/Documents/nmos/cd4007.txt
+vgs 1 0 dc 0
+*Specifying NMOS in this manner-
+*name drain gate source body modelname as in model file
+m1 2 1 0 0 mn4007
+*DC source of 0v to measure current
+vid 2 3 dc 0v
+vdd 5 0 dc 5v
+
+.control
+dc vgs 0 4 1
+run
+plot vid#branch vs v(2)
+print vid#branch v(2)
+.endc
+.end

@@ -1,0 +1,94 @@
+public class Design
+{
+    public void design1(int n)
+    {
+        for(int i=1;i<=n;i++)
+        {
+            for(int j=1;j<=i;j++)
+            {
+                System.out.print(j);
+            }
+            System.out.println();
+        }
+    }
+     public void design2(int n)
+    {
+        for(int i=1;i<=n;i++)
+        {
+            for(int j=1;j<=i;j++)
+            {
+                System.out.print(i);
+            }
+            System.out.println();
+        }
+    }
+    public void design3(int n)
+    {
+        for(int i=n;i>=1;i--)
+        {
+            for(int j=i;j>=1;j--)
+            {
+                System.out.print(j);
+            }
+            System.out.println();
+        }
+    }
+    public void design4(int n)
+    {
+        for(int i=1;i<=n;i++)
+        {
+            int s=0;
+            for(int j=1;j<=i;j++)
+            {
+                System.out.print(j);
+                s=s+j;
+            }
+            System.out.println(" "+s);
+        }
+    }
+    public void design5(int n)
+    {
+        for(int i=n;i>=1;i--)
+        {
+            for(int j=i;j>=1;j--)
+            {
+                System.out.print('X');
+            }
+            System.out.println();
+        }
+    }
+    public void design6(int n)
+    {
+        int sp=1;
+        for(int i=n;i>=1;i=i-2)
+        {
+            for(int j=1;j<=i;j++)
+            {
+                System.out.print('X');
+            }
+            System.out.println();
+            for(int k=1;k<=sp;k++)
+            {
+                System.out.print(" ");
+            }
+            sp++;
+        }
+    }
+    public void Design7(int n)
+    {
+        int sp=n/2;
+        for(int i=1;i<=n;i+=2)
+        {
+            for(int k=1;k<=sp;k++)
+            {
+                System.out.print(" ");
+            }
+            for(int j=i;j>=1;j--)
+            {
+                System.out.print('X');
+            }
+            System.out.println("");
+            sp--;
+        }
+    }            
+}

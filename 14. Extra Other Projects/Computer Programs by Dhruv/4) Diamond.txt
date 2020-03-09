@@ -1,0 +1,33 @@
+public class Diamond  
+{   // beginning of class
+    public void acc(int dno) // to accept middle diamond no. (dno=4)
+    {  // beginning of method
+        int i=0,sp=dno-1; // i for loops & sp for spaces 
+        for(i=1;i<=dno;i++)  // first part
+        {  // beginnig of big loop
+            for(int j=1;j<=sp;j++) // spaces
+                System.out.print(" ");
+            for(int k=1;k<=i;k++) // till no.
+                System.out.print(k);
+            for(int l=i-1;l>=1;l--) // from no. to 1 
+                System.out.print(l);
+            System.out.println(); // new line
+            sp--; // reduce space by 1
+            if(i==dno) // final part
+            {
+                sp=1;  // here space should be min. 1
+                for(int d=dno-1;d>=1;d--) // last part
+                { // beginnig of small loop
+                    for(int j=1;j<=sp;j++) // spaces
+                        System.out.print(" ");
+                    for(int k=1;k<=d;k++) //till no.
+                        System.out.print(k);
+                    for(int l=d-1;l>=1;l--) // from no. to 1
+                        System.out.print(l);
+                    System.out.println(); //new line
+                    sp++; // increase space by 1
+                } // end of small loop
+            } // end of if
+       }// end of big loop
+    } // end of function
+} // end of class

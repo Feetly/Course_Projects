@@ -1,0 +1,118 @@
+import java.util.*;
+public class Interest
+{
+    static Scanner sc=new Scanner(System.in);
+    public static void start()
+    {
+        int chc=0;
+        do
+        {
+            System.out.println("Welcome to yr Interest calculation Program");
+            System.out.println("1. Simple Interest");
+            System.out.println("2. Compound Interest");
+            System.out.println("3. Exit");
+            System.out.println("Enter yr Choice (1,2,3)");
+            chc=sc.nextInt();
+            switch(chc)
+            {
+                case 1 : System.out.println("1. Annually");
+                         System.out.println("2. Semi-Annually");
+                         System.out.println("3. Quarter-Annually");
+                         System.out.println("Enter yr Choice (1,2,3)");
+                         int ch1=sc.nextInt();
+                         switch(ch1)
+                         {
+                             case 1 : System.out.println("Enter Principal?");
+                                      double p1=sc.nextDouble();
+                                      System.out.println("Enter Rate?");
+                                      double r1=sc.nextDouble();
+                                      System.out.println("Enter Duration in Years?");
+                                      double t1=sc.nextDouble();
+                                      double i1=p1*r1*t1/100.0;
+                                      double a1=i1+p1;
+                                      System.out.println("Interest :- Rs. "+i1);
+                                      System.out.println("Amount :- Rs. "+a1);
+                                      break;
+                             case 2 : System.out.println("Enter Principal?");
+                                      double p2=sc.nextDouble();
+                                      System.out.println("Enter Rate?");
+                                      double r2=sc.nextDouble();
+                                      System.out.println("Enter how many half-Years? (years/2)");
+                                      double t2=sc.nextDouble();
+                                      double i2=p2*r2*t2/100.0;
+                                      double a2=i2+p2;
+                                      System.out.println("Interest :- Rs. "+i2);
+                                      System.out.println("Amount :- Rs. "+a2);
+                                      break;
+                             case 3 : System.out.println("Enter Principal?");
+                                      double p3=sc.nextDouble();
+                                      System.out.println("Enter Rate?");
+                                      double r3=sc.nextDouble();
+                                      System.out.println("Enter Duration in Quarter-Years? (years/4)");
+                                      double t3=sc.nextDouble();
+                                      double i3=p3*r3*t3/100.0;
+                                      double a3=i3+p3;
+                                      System.out.println("Interest :- Rs. "+i3);
+                                      System.out.println("Amount :- Rs. "+a3);
+                                      break;
+                             default : System.out.println("Invaild Choice , Try Again.");
+                                       break;         
+                         }
+                         break;
+                case 2 :System.out.println("1. Annually");
+                         System.out.println("2. Semi-Annually");
+                         System.out.println("3. Quarter-Annually");
+                         System.out.println("Enter yr Choice (1,2,3)");
+                         int ch2=sc.nextInt();
+                         switch(ch2)
+                         {
+                             case 1 : System.out.println("Enter Principal?");
+                                      double p1=sc.nextDouble();
+                                      System.out.println("Enter Rate?");
+                                      double r1=sc.nextDouble();
+                                      System.out.println("Enter Duration in Years?");
+                                      double t1=sc.nextDouble();
+                                      double i1=p1*((Math.pow(((100+r1)/100),t1))-1);
+                                      double a1=p1*(Math.pow(((100+r1)/100),t1));
+                                      System.out.println("Interest :- Rs. "+i1);
+                                      System.out.println("Amount :- Rs. "+a1);
+                                      break;
+                             case 2 : System.out.println("Enter Principal?");
+                                      double p2=sc.nextDouble();
+                                      System.out.println("Enter Rate?");
+                                      double r2=sc.nextDouble();
+                                      System.out.println("Enter how many half-Years? (years/2)");
+                                      double t2=sc.nextDouble();
+                                      double i2=p2*((Math.pow(((100+r2)/100),t2))-1);
+                                      double a2=p2*(Math.pow(((100+r2)/100),t2));
+                                      System.out.println("Interest :- Rs. "+i2);
+                                      System.out.println("Amount :- Rs. "+a2);
+                                      break;
+                             case 3 : System.out.println("Enter Principal?");
+                                      double p3=sc.nextDouble();
+                                      System.out.println("Enter Rate?");
+                                      double r3=sc.nextDouble();
+                                      System.out.println("Enter Duration in Quarter-Years? (years/4)");
+                                      double t3=sc.nextDouble();
+                                      double i3=p3*((Math.pow(((100+r3)/100),t3))-1);
+                                      double a3=p3*(Math.pow(((100+r3)/100),t3));
+                                      System.out.println("Interest :- Rs. "+i3);
+                                      System.out.println("Amount :- Rs. "+a3);
+                                      break;
+                             default : System.out.println("Invaild Choice , Try Again.");
+                                       break;         
+                         }
+                         break;
+                case 3 : System.out.println("Good Bye");
+                         break; 
+                default : System.out.println("Invaild Choice , Try Again.");
+                          break;         
+            }
+        }while(chc!=3);
+        String t=sc.nextLine();
+        t=sc.nextLine();
+        sc.close();
+        System.exit(0);
+    }
+}
+            

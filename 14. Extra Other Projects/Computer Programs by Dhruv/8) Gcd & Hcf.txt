@@ -1,0 +1,25 @@
+public class Mathss
+{
+    public static void GcdOrHcf(int n1,int n2)
+    {
+        int l=(n1>n2)?n1:n2,s=(n1<n2)?n1:n2,r=l%s;
+        while(r!=0)
+        {
+            l=s;
+            s=r;
+            r=l%r;
+        }    
+        System.out.println("GCD or HCF :- "+s+"\nLCM:- "+((n1*n2)/s));
+    }
+    public static void wiotgcd(int l,int s)
+    {
+        for(int i=l;i<=(l*s);i++)
+        {
+            if((i%l==0)&&(i%s==0))
+            {
+                System.out.println(i);
+                break;
+            }
+        }
+    }
+}

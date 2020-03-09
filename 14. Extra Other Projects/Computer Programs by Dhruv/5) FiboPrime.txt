@@ -1,0 +1,36 @@
+public class FiboPrime
+{
+    public void fiboPrime()
+    {
+        int a=0;
+        int b=1;
+        int c=a+b;
+        int t=3;
+        int flag=0;
+        while(c<10000)
+        {
+            if(isPrime(c) && c>999)
+            {
+                flag=1;
+                System.out.println(c);
+                System.out.println(t);
+            }
+            t++;
+            a=b;
+            b=c;
+            c=a+b;
+        }
+        if(flag==0)
+        System.out.println("No such no");
+}
+private boolean isPrime(int no)
+{
+    int f=0;
+    for(int i=1;i<=no;i++)
+    {
+        if(no%i==0)
+        f++;
+    }
+    return (f==2);
+}
+}

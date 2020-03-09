@@ -1,0 +1,36 @@
+public class FrequencyOfAlphabets
+{
+    public void freq(String s)
+    {
+        int[]ctr=new int[26];
+        s=s.toUpperCase();
+        for(int i=0;i<s.length();i++)
+        {
+            char ch=s.charAt(i);
+            if(Character.isLetter(ch))
+            {
+                int c=(int)ch;
+                ctr[c-65]++;
+            }
+        }
+        for(int i=0;i<26;i++)
+        {
+            if (ctr[i]==0)
+            ;
+            else
+            System.out.println((char)(i+65)+"\t"+ctr[i]);
+        }
+        for(char i='A';i<='Z';i++)
+        {
+            int n=0;
+            for(int j=0;j<s.length();j++)
+            {
+                if(s.charAt(j)==(char)i)
+                    n++;
+            }
+            if(n!=0)
+            System.out.println(i+" :- "+n);
+        }
+    }
+}
+        

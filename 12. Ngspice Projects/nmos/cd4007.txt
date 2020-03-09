@@ -1,0 +1,14 @@
+**CD4007 MOS Array
+*----------------------------------------------------------------------------------
+* N4007 (NMOS on CD4007 CMOS integrated circuit)
+*
+.model MN4007 NMOS (Kp=500u Vto=1.5 Lambda=0.01 Gamma=0.6
++ Xj=0 Tox=1200n Phi=.6 Rs=0 Rd=0 Cbd=2.0p Cbs=2.0p Pb=.8 Cgso=0.1p Cgdo=0.1p Is=16.64p N=1)
+*----------------------------------------------------------------------------------
+* P4007 (PMOS on CD4007 CMOS integrated circuit)
+*
+.model MP4007 PMOS (Kp=500u Vto=-1.5 Lambda=0.04 Gamma=0.6
++ Xj=0 Tox=1200n Phi=.6 Rs=0 Rd=0 Cbd=4.0p Cbs=4.0p Pb=.8 Cgso=0.2p Cgdo=0.2p Is=16.64p N=1)
+*
+*----------------------------------------------------------------------------------
+
