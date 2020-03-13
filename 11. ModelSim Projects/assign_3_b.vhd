@@ -3,7 +3,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.STD_LOGIC_ARITH.ALL;
 use IEEE.STD_LOGIC_UNSIGNED.ALL;
 
-entity MUX is
+entity MUXX is
 Port( 
 S1 : in  STD_LOGIC;
 S0 : in  STD_LOGIC;
@@ -12,8 +12,8 @@ I2 : in  STD_LOGIC;
 I1 : in  STD_LOGIC;
 I0 : in  STD_LOGIC;
 Y : out STD_LOGIC);
-end MUX;
-architecture Behavioral of MUX is
+end MUXX;
+architecture Behavioral of MUXX is
 begin
 process (S1,S0,I3,I2,I1,I0)
 begin
@@ -43,7 +43,7 @@ end Func;
  
 architecture Behavioral of Func is
  
-component MUX
+component MUXX
 Port( 
 S1 : in  STD_LOGIC;
 S0 : in  STD_LOGIC;
@@ -62,6 +62,6 @@ I1 <= C xnor D;
 I2 <= C and (not D);
 I3 <= C or (not D);
 
-uut: MUX port map( A , B, I3 , I2 , I1 , I0 , Y0 );
+uut: MUXX port map( A , B, I3 , I2 , I1 , I0 , Y0 );
 
 end Behavioral;
