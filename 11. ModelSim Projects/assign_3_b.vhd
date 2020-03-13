@@ -60,7 +60,7 @@ begin
 I0 <= C xor D;
 I1 <= C xnor D;
 I2 <= C and (not D);
-I3 <= D or (not D);
+I3 <= C or (not D);
 
 uut: MUX port map( A , B, I3 , I2 , I1 , I0 , Y0 );
 
