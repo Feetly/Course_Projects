@@ -1,9 +1,7 @@
 #!/bin/bash
 sudo apt-get -y update && sudo apt-get -y upgrade
-cd /var/www/
-sudo rm -r html
+chmod 777 /var/www/
+chmod 777 /var/www/html
 sudo wget -q  https://github.com/DestroyerAlpha/MilestoneIndustries/archive/develop.zip
-sudo  unzip -o -q *.zip && sudo rm -f *.zip
-sudo mv -f MilestoneIndustries-develop/ html/
-cd ~
-
+chmod 777 /var/www/html/*.zip
+sudo unzip -o -q *.zip
